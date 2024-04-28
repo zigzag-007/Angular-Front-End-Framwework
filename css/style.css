@@ -1,0 +1,878 @@
+/* Importing the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Body Background common for All Pages */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #081B29; /* Dark background */
+  color: #eee; /* Light gray text */
+}
+
+/* ================ :: Fixed Header (All Pages) :: ======================= */
+/* Header styles Common for all Pages */
+/* Resetting default styles and setting box-sizing to border-box for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+/* Styling the header */
+.header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    width: 100%;
+    padding: 30px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Adding animation to the logo */
+.logo p::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Styling the logo Desktop view */
+.logo p { 
+  font-size: 2.2rem;
+  position: relative;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo p {
+  font-size: 2.2rem;
+  position: absolute;
+  transform: translate( 0, -50%);
+}
+
+/* Styling the logo Mobile view */
+@media (max-width:768px) {
+    .logo p {
+        font-size: 4rem;
+        text-align: left;
+        width: 100%; /* Take up the full width */
+    }
+}
+
+.logo p:nth-child(1) {
+  color: white;
+  -webkit-text-stroke: 2px Black;
+  font-weight: 700;
+}
+
+.logo p:nth-child(2) {
+  color: #03a9f4;
+  font-weight: 700;
+  animation: animate 4s ease-in-out infinite;
+}
+
+/* Styling the navbar links */
+.navbar a {
+    font-size: 1.2rem;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+/* Changing the color of the navbar links on hover and when active */
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* Toggler Styles */
+.header #toggler {
+    display: none;
+}
+
+/* Hamburger (Three line) Menu Styles */
+.header .fa-bars {
+    font-size: 3rem;
+    color: white; /* Changed color to white */
+    border-radius: .5rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(255, 255, 255, 0.3); /* Changed border color to white */
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width:991px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    /* Show Hamburger Menu */
+    .header .fa-bars {
+        display: block;
+    }
+
+    /* Navbar Styles for Mobile */
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #081B29; /* Changed background to match body */
+        border-top: .1rem solid rgba(255, 255, 255, 0.1); /* Changed border color to white */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Navbar Animation for Mobile */
+    .header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    /* Navbar Link Styles for Mobile */
+    .header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: white;
+        border: .1rem solid rgba(0, 0, 0, 0.1);
+        display: block;
+        color: #081B29; /* Changed text color to match body */
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+        );
+    }
+
+    50% {
+        clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+
+/* ShowRight animation */
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+}
+
+/* ShowDown animation */
+@keyframes showDown {
+    100% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+}
+
+
+/* ============================ :: Home Page Full Design (1st Page) :: ============================ */
+/* Styling the home section */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: url(https://raw.githubusercontent.com/zigzag-007/Testing/main/background.png) no-repeat;
+}
+
+/* Setting the maximum width for the home content */
+.home-content {
+    max-width: 600px;
+}
+
+/* Styling the h1 tag in the home content */
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Adding animation to the h1 tag in the home content */
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Styling the h3 tag in the home content */
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+/* Adding animation to the h3 tag in the home content */
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+/* Styling the paragraph in the home content */
+.home-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+/* Adding animation to the paragraph in the home content */
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+/* Styling the button box in the home content */
+.home-content .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+/* Adding animation to the button box in the home content */
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 2;
+}
+
+/* Styling the buttons in the button box */
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+/* Changing the color of the buttons on hover */
+.btn-box a:hover {
+    color: #00abf0;
+}
+
+/* Styling the second button in the button box */
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+/* Changing the color of the second button on hover */
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+}
+
+/* Adding animation to the second button */
+.btn-box a:nth-child(2)::before {
+    background: #00abf0;
+}
+
+/* Adding animation to the buttons */
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+/* Changing the width of the buttons on hover */
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+/* Styling the social media icons in the home section */
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Adding animation to the social media icons */
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+/* Styling the social media icons */
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+/* Changing the color of the social media icons on hover */
+.home-sci a:hover {
+    color: #081b29;
+}
+
+/* Adding animation to the social media icons */
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+/* Changing the width of the social media icons on hover */
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+/* ============================ :: About Page Full Design (2nd Page) :: ============================ */
+/* Styling the Heading 2 of AboutPageContent */
+.about-page-content h2 {
+    -webkit-text-stroke: 1px Black;
+    font-family: 'Poppins', sans-serif; /* Using a professional font */
+    font-size: 2rem; /* Setting larger headings */
+    margin: 1rem 0;
+    padding: 0;
+    font-weight: 700;
+    color: #1c7dec; /* Using clean Blue headings */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Applying stronger text shadow */
+}
+
+/* Designing the AboutPageContent Body Content Box */
+.about-page-content { 
+  padding: 2rem 4rem;
+  max-width: 1000px; /* Setting content width for better responsiveness */
+  margin: 5rem auto 2rem; /* Adjusting top margin */
+  margin-bottom: 0rem;
+}
+
+/* Adding animation to the AboutPageContent */
+.about-page-content::before {
+    content: '';
+    position: absolute;
+    top: 0;right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showDown 5s ease forwards;
+    animation-delay: 2.5s;
+}
+
+/* Designing the first unordered list in AboutPageContent with a white box */
+.about-page-content .first-ul {
+    list-style: disc;
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+    background-color: #f8f9fa; /* Applying light background for contrast */
+    color: #333; /* Using darker text for better readability */
+    max-width: 800px; /* Setting max width for optimal reading line length */
+    margin: auto; /* Center aligning the list */
+    border-radius: 8px; /* Softening the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Applying subtle shadow for depth */
+    font-size: 1.1rem; /* Setting slightly larger font size */
+    line-height: 1.5; /* Improving line spacing */
+    margin-bottom: 2rem;
+  }
+
+  /* Styling the Heading 2 content in the first unordered list of AboutPageContent */
+  .about-page-content .first-ul h2 {
+    color: #007bff; /* Highlighting the heading with a brand color */
+    margin-bottom: 1rem; /* Adding space below the heading */
+  }
+  
+  /* Styling the Unordered list & list items in the first unordered list of AboutPageContent */
+  .about-page-content .first-ul li {
+    margin-bottom: 0.5rem; /* Adding space between list items */
+  }
+  
+  /* Designing the second unordered list in AboutPageContent with a white box */
+  .about-page-content .second-ul {
+    list-style: disc;
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+    background-color: #f8f9fa; /* Applying light background for contrast */
+    color: #333; /* Using darker text for better readability */
+    max-width: 800px; /* Setting max width for optimal reading line length */
+    margin: auto; /* Center aligning the list */
+    border-radius: 8px; /* Softening the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Applying subtle shadow for depth */
+    font-size: 1.1rem; /* Setting slightly larger font size */
+    line-height: 1.6; /* Improving line spacing */
+  }
+  
+   /* Styling the Heading 2 content in the second unordered list of AboutPageContent */
+  .about-page-content .second-ul h2 {
+    color: #007bff; /* Highlighting the heading with a brand color */
+    margin-bottom: 1rem; /* Adding space below the heading */
+  }
+  
+  /* Styling the Unordered list & list items in the second unordered list of AboutPageContent */
+  .about-page-content .second-ul li {
+    margin-bottom: 0.5rem; /* Adding space between list items */
+  }
+
+/* Styling the 'LI' content in the second unordered list of AboutPageContent */
+.about-page-content .second-ul li {
+  margin-bottom: 1rem;
+}
+
+/* Styling the paragraph in AboutPageContent */
+.about-page-content p {
+    color: rgb(0, 0, 0);
+}
+
+/* ============================ :: Enhancements Page Full Design (3rd Page) :: ============================ */
+/* Styling the Heading 2 of EnhancementsPageContent */
+.enhancements-page h2 {
+    -webkit-text-stroke: 1px Black;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif; /* Using a professional font */
+    font-size: 2rem; /* Setting larger headings */
+    margin: 1rem 0;
+    padding: 0;
+    font-weight: 700;
+    color: #1c7dec; /* Using clean Blue headings */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Applying stronger text shadow */
+}
+
+/* Designing the EnhancementsPageContent Body Content Box */
+.enhancements-page {
+  padding: 2rem 4rem;
+  max-width: 1000px; /* Setting content width for better responsiveness */
+  margin: 5rem auto 2rem; /* Adjusting top margin */
+  margin-bottom: 0rem;
+}
+
+/* Adding animation to the EnhancementsPageContent */
+.enhancements-page::before {
+    content: '';
+    position: absolute;
+    top: 0;right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showDown 5s ease forwards;
+    animation-delay: 2.5s;
+}
+
+/* Designing the first block in EnhancementsPageContent with a white box */
+.enhancements-page .first-block {
+    list-style: disc; /* Removing default list style */
+    padding: 1rem 2rem; /* Adjusting padding */
+    padding-bottom: 2rem; /* Adjusting bottom padding */
+    background-color: #f8f9fa; /* Applying light background for contrast */
+    color: #333; /* Using darker text for better readability */
+    max-width: 800px; /* Setting max width for optimal reading line length */
+    margin: auto; /* Center aligning the list */
+    border-radius: 8px; /* Softening the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Applying subtle shadow for depth */
+    font-size: 1.1rem; /* Setting slightly larger font size */
+    line-height: 1.5; /* Improving line spacing */
+    margin-bottom: 2rem; /* Adding space below the list */
+  }
+
+/* Styling the paragraph in the first block of EnhancementsPageContent */
+.enhancements-page .first-block p {
+    font-size: 1.2rem;
+    text-align: center; /* Center aligning the text */
+    font-weight: bold; /* Making the text bold */
+}
+
+/* Designing the second block in EnhancementsPageContent with a white box */
+.enhancements-page .second-block {
+    list-style: disc;
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+    background-color: #f8f9fa; /* Applying light background for contrast */
+    color: #333; /* Using darker text for better readability */
+    max-width: 800px; /* Setting max width for optimal reading line length */
+    margin: auto; /* Center aligning the list */
+    border-radius: 8px; /* Softening the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Applying subtle shadow for depth */
+    font-size: 1.1rem; /* Setting slightly larger font size */
+    line-height: 1.5; /* Improving line spacing */
+    margin-bottom: 2rem;
+  }
+
+/* Styling the paragraph in the second block of EnhancementsPageContent */
+.enhancements-page .second-block p {
+    margin-bottom: 1rem; /* Adding space between list items */
+    font-size: 1.2rem;
+    font-weight: bold; /* Making the text bold */
+}
+
+/* ============================ :: Quizes Page Full Design (4th Page) :: ============================ */
+/* Designing the QuizPageContent Body Content Box */
+.quiz-page-content {
+  padding: 2rem 4rem; /* Adjusting padding */
+  max-width: 1000px; /* Setting content width for better responsiveness */
+  margin: 5rem auto 2rem; /* Adjusting top margin */
+  margin-bottom: 0rem; /* Adjusting bottom margin */
+}
+
+/* Adding animation to the QuizPageContent */
+.quiz-page-content::before {
+    content: ''; /* Removing default list style */
+    position: absolute; /* Adjusting position */
+    top: 0;right: 0; /* Adjusting position */
+    width: 100%;
+    height: 100%;
+    background: #081b29; /* Adjusting background color */
+    animation: showDown 5s ease forwards; /* Adjusting animation duration */
+    animation-delay: 2.5s; /* Adjusting animation delay */
+}
+
+/* Designing the quiz box in QuizPageContent with a white box */
+.quiz-page-content .quiz-box {
+    list-style: disc;
+    padding: 1rem 2rem; /* Adjusting padding */
+    padding-bottom: 2rem;
+    background-color: #f8f9fa; /* Applying light background for contrast */
+    color: #333; /* Using darker text for better readability */
+    max-width: 1000px; /* Setting max width for optimal reading line length */
+    margin: auto; /* Center aligning the list */
+    border-radius: 8px; /* Softening the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Applying subtle shadow for depth */
+    font-size: 1.1rem; /* Setting slightly larger font size */
+    line-height: 1.5; /* Improving line spacing */
+    margin-bottom: 2rem; /* Adjusting bottom margin */
+}
+
+/* Styling the list items in the ordered list of QuizPageContent */
+.quiz-page-content ol li {
+    margin-bottom: 1rem;
+    font-size: 16px;
+    font-weight:   400;
+}
+
+/* Styling the Heading 3 in QuizPageContent */
+.quiz-page-content h3 {
+    font-size: 1.3rem; /* Setting larger headings */
+    font-family: 'Poppins', sans-serif; /* Using a professional font */
+    margin: 1rem 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+/* Styling the Heading 1 in QuizPageContent */
+.quiz-page-content h1 {
+    -webkit-text-stroke: 1px #000000;
+    font-weight: bolder;
+    font-size: 2.3rem; /* Setting larger headings */
+    color: #1c7dec; /* Using clean Blue headings */
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Using a professional font */
+    margin: 1rem 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+/* ============================ :: Maintenance Page Full Design (5th Page )[optional page] :: ============================ */
+/* Designing the MaintenancePageContent Body Content Box */
+.maintenance-page {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    margin: 10rem auto 2rem; /* Adjusting top margin */
+    text-align: center;
+    max-width: 1000px; /* Setting content width for better responsiveness */
+    margin-bottom: 0rem; /* Adjusting bottom margin */
+}
+
+/* Styling the Heading 2 in MaintenancePageContent */
+.maintenance-page h2 {  
+    font-size: 40px; /* Adjust this value to your preference */
+    -webkit-text-stroke: 1px Black;
+}
+
+/* Styling the paragraph in MaintenancePageContent */
+.maintenance-page p {  
+    font-size: 16px; /* Adjust this value to your preference */
+    text-align: center;
+}
+
+/* Designing the notify button */
+.notify-button {
+    background-color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Changing this to block */
+    font-size: 16px;
+    margin: 20px auto; /* Changing this to auto */
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+/* Changing the color of the notify button on hover */
+.notify-button:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* ================ :: Footer Page Full Design :: ======================= */
+/* Footer styles common for all the Pages */
+footer{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Footer Container */
+.footerContainer {
+    width: 100%;
+    padding: 20px 30px 5px ;
+}
+
+/* Social media icons container */
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+
+/* Social media icons */
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+/* Hover affect on social media icon */
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+
+/* Hover affect on social media icon */
+.socialIcons a:hover i{
+    color: pink;
+    transition: 0.5s;
+}
+
+/* Footer Navigation */
+.footerNav{
+    margin: 30px 0;
+}
+
+/* Footer Nav separator */
+.footerNav::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Footer Nav links */
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+/* Animation for footer Nav links */
+.footerNav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 2s ease forwards;
+    animation-delay: 2.5s;
+}
+
+/* Footer Nav links */
+.footerNav ul li a{
+    color:ghostwhite;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+
+/* Animation for footer Nav links */
+.footerNav ul li a:hover{
+    opacity: 1;
+    color: #e84393; /* Custom Pink Color */
+}
+
+/* Footer Bottom */
+.footerBottom{
+    background-color: #001;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer Bottom text */
+.footerBottom p{
+    color: azure;
+}
+
+/* Designer text */
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+/* Media Queries */
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
