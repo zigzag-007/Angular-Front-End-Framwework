@@ -7,7 +7,7 @@
 <p align="center">"Angular Frontend Framework" 💻✨ offers robust tools and structure for creating scalable, maintainable, and dynamic applications with ease. 🚀🌐</p>
 
 <p align="center">
-    <a href="https://t.me/dark_net_studio"><img src="https://img.shields.io/badge/Join%20our%20Telegram%20Community-blue?style=social&logo=telegram" alt="Join our Community on Telegram" title="Join our Community on Telegram"></a>
+    <a href="https://t.me/dark_net_studio"><img src="https://img.shields.io/badge/Join%20our%20Telegram%20Community-blue?style=social&logo=telegram" alt="Contact me on Telegram" title="Contact me on Telegram"></a>
     <a href="https://www.facebook.com/MaesterShahin"><img src="https://img.shields.io/badge/Follow%20us%20on%20Facebook-blue?style=social&logo=facebook" alt="Follow us on Facebook" title="Follow us on Facebook"></a>
 </p>
 
