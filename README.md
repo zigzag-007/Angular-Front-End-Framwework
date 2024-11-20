@@ -28,7 +28,7 @@ Angular Frontend Framework provides developers with everything they need to buil
 
 ```
 Latest Version: v1.0.6
-Release Date: 20-November-2024
+Release Date: 20-March-2024
 ```
 
 ### [Follow us on Facebook](https://www.facebook.com/MaesterShahin)
