@@ -7,7 +7,7 @@
 <p align="center">"Angular Frontend Framework" 💻✨ offers robust tools and structure for creating scalable, maintainable, and dynamic applications with ease. 🚀🌐</p>
 
 <p align="center">
-    <a href="https://t.me/dark_net_studio"><img src="https://img.shields.io/badge/Join%20our%20Telegram%20Community-blue?style=social&logo=telegram" alt="Contact me on Telegram" title="Contact me on Telegram"></a>
+    <a href="https://t.me/dark_net_studio"><img src="https://img.shields.io/badge/Contact%20me%20on%20Telegram%20-blue?style=social&logo=telegram" alt="Contact me on Telegram" title="Contact me on Telegram"></a>
     <a href="https://www.facebook.com/MaesterShahin"><img src="https://img.shields.io/badge/Follow%20us%20on%20Facebook-blue?style=social&logo=facebook" alt="Follow us on Facebook" title="Follow us on Facebook"></a>
 </p>
 
@@ -22,7 +22,7 @@ Angular Frontend Framework provides developers with everything they need to buil
 - **TypeScript Integration 📘**: Ensures type safety and error handling, reducing runtime issues.
 - **Cross-Platform Compatibility 🌐**: Works seamlessly across all major browsers and devices.
 - **Efficient Testing Framework 🧪**: Supports unit testing and end-to-end testing for robust application development.
-- **Modern UI Enhancements 🎨**: Delivers dynamic and smooth user interfaces for the best user experience.
+- **Modern UI Enhancements 🎨**: Smooth user interfaces not Mobile Responsive.
 
 </br>
 
